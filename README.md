@@ -1,5 +1,6 @@
 # proj
 Проектная работа
+
 Аварийное восстановление микросервисной архитектуры
 
 Проект разбит на микросервисы в контейнерах docker, каждая папка это отдельный образ контейнера с файлами конфигураций
@@ -7,7 +8,11 @@
 Для запуска необходимо выполнить несколько пунктов
 
 1. Необходимо предварительно установить Ubuntu 22.04
+
    Установить docker (sudo apt install docker)
+
    Запустить сервис docker (systemctl enable --now docker)
+
    Установить git (sudo apt install git)
-2. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git)
+
+3. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git)
