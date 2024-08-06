@@ -17,17 +17,17 @@
 
    Установить git (sudo apt install git)
 
-4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git)
+4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) b и перейти в папку proj (cd proj)
 
 5. Nginx
    
-   Создание образа (sudo docker build -t nginx1 ./nginx)
+   Создание образа (sudo docker build -t nginx1 ./Nginx)
 
    Запуск контейнера (sudo docker run -d --name nginx -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
 
 6. Apache
 
-   Создание образа (sudo docker build -t httpd1 ./httpd)
+   Создание образа (sudo docker build -t httpd1 ./Httpd)
 
    Запуск контейнера (sudo docker run -d --name httpd -p 8080:8080 httpd1)
 
