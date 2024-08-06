@@ -7,7 +7,9 @@
 
 Для запуска необходимо выполнить несколько пунктов
 
-1. Необходимо предварительно установить Ubuntu 22.04
+1. Необходимо предварительно:
+
+   Установить Ubuntu 22.04
 
    Установить docker (sudo apt install docker)
 
@@ -15,4 +17,4 @@
 
    Установить git (sudo apt install git)
 
-3. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git)
+4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git)
