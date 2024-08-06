@@ -23,7 +23,7 @@
    
    Создание образа (sudo docker build -t nginx1 ./nginx)
 
-   Запуск контейнера (docker run -d --name nginx -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
+   Запуск контейнера (sudo docker run -d --name nginx -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
 
 6. Apache
 
