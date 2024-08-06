@@ -11,10 +11,24 @@
 
    Установить Ubuntu 22.04
 
-   Установить docker (sudo apt install docker)
+   Установить docker (sudo apt install docker.io)
 
-   Запустить сервис docker (systemctl enable --now docker)
+   Запустить сервис docker (sudo systemctl enable --now docker)
 
    Установить git (sudo apt install git)
 
 4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git)
+
+5. Nginx
+   
+   Создание образа (sudo docker build -t nginx1 ./nginx)
+
+   Запуск контейнера (docker run -d --name nginx -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
+
+6. Apache
+
+   Создание образа (sudo docker build -t httpd1 ./httpd)
+
+   Запуск контейнера (sudo docker run -d --name httpd -p 8080:8080 httpd1)
+
+   
