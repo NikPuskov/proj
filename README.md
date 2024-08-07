@@ -17,7 +17,7 @@
 
    Установить git (sudo apt install git)
 
-4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) b и перейти в папку proj (cd proj)
+4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
 
 5. Nginx
    
