@@ -35,14 +35,14 @@
 
    Предварительно устанавливаем MySQL сервер (apt install mysql-server-8.0)
 
-   Создание образа mysql slave (sudo docker build -t slave_obj ./db)
+   Создание образа mysql slave (sudo docker build -t slave ./MySQL)
 
-   Запуск контейнера mysql slave (sudo docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave_obj)
+   Запуск контейнера mysql slave (sudo docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave)
 
    Запуск контейнера mysql master (sudo docker run --name mysql-master -p 3306:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0)
 
-   Запуск скрипта репликации (bash ./db/repl.sh)
+   Запуск скрипта репликации (bash ./MySQL/repl.sh)
 
-   Запуск backup посуточно (cp ./backup.sh /etc/cron.daily/backup.sh)
+   Запуск скрипта backup посуточно (cp ./backup.sh /etc/cron.daily/backup.sh)
 
    
