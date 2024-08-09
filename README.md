@@ -43,6 +43,6 @@
 
    Запуск скрипта репликации (bash ./MySQL/repl.sh)
 
-   Запуск скрипта backup посуточно (cp ./backup.sh /etc/cron.daily/backup.sh)
+   Запуск скрипта backup посуточно (sudo cp ./MySQL/backup.sh /etc/cron.daily/backup.sh)
 
    
