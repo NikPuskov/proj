@@ -39,7 +39,7 @@
 
    Запуск контейнера mysql slave (sudo docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave)
 
-   Запуск контейнера mysql master (sudo docker run --name mysql-master -p 3306:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0)
+   Запуск контейнера mysql master (sudo docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0)
 
    Запуск скрипта репликации (bash ./MySQL/repl.sh)
 
