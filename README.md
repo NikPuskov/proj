@@ -1,7 +1,7 @@
 # proj
 Проектная работа
 
-Аварийное восстановление микросервисной архитектуры
+"Аварийное восстановление микросервисной архитектуры"
 
 Проект разбит на микросервисы в контейнерах docker, каждая папка это отдельный образ контейнера с файлами конфигураций
 
@@ -23,12 +23,12 @@
    
    Создание образа (sudo docker build -t nginx1 ./Nginx)
 
-   Запуск контейнера (docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
+   Запуск контейнера (sudo docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
 
 6. Apache
 
    Создание образа (sudo docker build -t httpd1 ./Httpd)
 
-   Запуск контейнера (docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
+   Запуск контейнера (sudo docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
 
    
