@@ -57,10 +57,10 @@
 
    Настройки Grafana:
 
-      a. В браузере ip_address:3000 -> admin/admin
+      a) В браузере ip_address:3000 -> admin/admin
 
-      b. connections -> data sources -> add new data source -> prometheus -> ip_address:9090 -> save and test
+      b) connections -> data sources -> add new data source -> prometheus -> ip_address:9090 -> save and test
 
-      c. dashboards -> import dashboard -> 1860 -> load
+      c) dashboards -> import dashboard -> 1860 -> load
 
    
