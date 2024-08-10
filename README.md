@@ -47,10 +47,20 @@
 
 8. Prometheus + node_exporter + Grafana
 
-   sudo docker build -t prometheus ./Prometheus
+   Создание образа Prometheus (sudo docker build -t prometheus ./Prometheus)
 
-   sudo docker run -d --name prometheus -p 9090:9090 prometheus
+   Запуск контейнера Prometheus (sudo docker run -d --name prometheus -p 9090:9090 prometheus)
 
-   sudo docker run -d --name node_exporter -p 9100:9100 prom/node-exporter
+   Запуск контейнера Node_exporter (sudo docker run -d --name node_exporter -p 9100:9100 prom/node-exporter)
 
-   sudo docker run -d --name grafana -p 3000:3000 grafana/grafana
+   Запуск контейнера Grafana (sudo docker run -d --name grafana -p 3000:3000 grafana/grafana)
+
+   Настройки Grafana:
+
+      1. В браузере ip_address:3000 -> admin/admin
+
+      2. connections -> data sources -> add new data source -> prometheus -> ip_address:9090 -> save and test
+
+      3. dashboards -> import dashboard -> 1860 -> load
+
+   
