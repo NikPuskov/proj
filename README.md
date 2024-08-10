@@ -47,8 +47,10 @@
 
 8. Prometheus + node_exporter + Grafana
 
-   docker build -t prometheus ./Prometheus
+   sudo docker build -t prometheus ./Prometheus
 
-   docker run -d --name prometheus -p 9090:9090 prometheus
+   sudo docker run -d --name prometheus -p 9090:9090 prometheus
 
-   docker run -d --name grafana -p 3000:3000 grafana/grafana
+   sudo docker run -d --name node_exporter -p 9100:9100 prom/node-exporter
+
+   sudo docker run -d --name grafana -p 3000:3000 grafana/grafana
