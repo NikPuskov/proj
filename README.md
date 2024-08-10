@@ -63,4 +63,14 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
+9. ELK
+
+   sudo docker pull elasticsearch:8.15.0
+
+   sudo docker pull logstash:8.15.0
+
+   sudo docker pull kibana:8.15.0
+
+   sudo docker pull elastic/filebeat:8.15.0
+
    
