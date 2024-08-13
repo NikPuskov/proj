@@ -15,9 +15,15 @@
 
    Запустить сервис docker (systemctl enable --now docker)
 
+   Скачать необходимые образы Docker (nginx, httpd, mysql, prometheus, node_exporter, grafana, elasticsearch, logstash, kibana, filebeat)
+
    Установить git (apt install git)
 
 2. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
+
+   Запустить скрипт proj.sh (sh ./proj.sh)
+
+   Либо выполнять всё попунктно далее с 3 пункта 
 
 3. Nginx
 
