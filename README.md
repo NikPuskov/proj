@@ -11,6 +11,8 @@
 
    Установить Ubuntu 22.04
 
+   Работу выполнять под root (sudo -i)
+
    Установить docker (apt install docker.io)
 
    Запустить сервис docker (systemctl enable --now docker)
@@ -19,13 +21,13 @@
 
    Установить git (apt install git)
 
-2. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
+3. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
 
    Запустить скрипт proj.sh (sh ./proj.sh)
 
    Либо выполнять всё попунктно далее с 3 пункта 
 
-3. Nginx
+4. Nginx
 
    Предварительно скачиваем docker-образ (docker pull nginx:1.26)
 
@@ -33,7 +35,7 @@
 
    Запуск контейнера (docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
 
-4. Apache
+5. Apache
 
    Предварительно скачиваем docker-образ (docker pull httpd:2.4.62)
 
@@ -41,7 +43,7 @@
 
    Запуск контейнера (docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
 
-5. MySQL
+6. MySQL
 
    Предварительно устанавливаем MySQL клиент на хостовую машину (apt install mysql-client-core-8.0)
 
@@ -59,7 +61,7 @@
 
    Запуск скрипта backup slave (bash ./MySQL/backup.sh)
 
-6. Prometheus + node_exporter + Grafana
+7. Prometheus + node_exporter + Grafana
 
    Предварительно скачиваем docker-образы (docker pull prometheus, docker pull prom/node-exporter, docker pull grafana/grafana)
 
@@ -79,7 +81,7 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-7. ELK
+8. ELK
 
    Предварительно скачиваем docker-образы (docker pull elasticsearch:8.15.0, docker pull logstash:8.15.0, docker pull kibana:8.15.0, docker pull elastic/filebeat:8.15.0)
    
