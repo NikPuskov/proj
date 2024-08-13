@@ -11,51 +11,59 @@
 
    Установить Ubuntu 22.04
 
-   Установить docker (sudo apt install docker.io)
+   Установить docker (apt install docker.io)
 
-   Запустить сервис docker (sudo systemctl enable --now docker)
+   Запустить сервис docker (systemctl enable --now docker)
 
-   Установить git (sudo apt install git)
+   Установить git (apt install git)
 
 4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
 
 5. Nginx
-   
-   Создание образа (sudo docker build -t nginx1 ./Nginx)
 
-   Запуск контейнера (sudo docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
+   Предварительно скачиваем docker-образ (docker pull nginx:1.26)
+
+   Создание образа с конфигом (docker build -t nginx1 ./Nginx)
+
+   Запуск контейнера (docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
 
 6. Apache
 
-   Создание образа (sudo docker build -t httpd1 ./Httpd)
+   Предварительно скачиваем docker-образ (docker pull httpd:2.4.52)
 
-   Запуск контейнера (sudo docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
+   Создание образа с конфигами (docker build -t httpd1 ./Httpd)
+
+   Запуск контейнера (docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
 
 7. MySQL
 
    Предварительно устанавливаем MySQL клиент на хостовую машину (apt install mysql-client-core-8.0)
 
+   Так же предварительно скачиваем docker-образ (docker pull mysql:8.0)
+
    Копируем файл .my.cnf в корень (cp /root/proj/.my.cnf /root/.my.cnf)
 
-   Создание образа mysql slave (sudo docker build -t slave ./MySQL)
+   Создание образа mysql slave с конфигом (docker build -t slave ./MySQL)
 
-   Запуск контейнера mysql slave (sudo docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave)
+   Запуск контейнера mysql slave (docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave)
 
-   Запуск контейнера mysql master (sudo docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0)
+   Запуск контейнера mysql master (docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0)
 
    Запуск скрипта репликации (bash ./MySQL/repl.sh)
 
-   Запуск скрипта backup посуточно (sudo cp ./MySQL/backup.sh /etc/cron.daily/backup.sh)
+   Запуск скрипта backup посуточно (cp ./MySQL/backup.sh /etc/cron.daily/backup.sh)
 
 9. Prometheus + node_exporter + Grafana
 
-   Создание образа Prometheus (sudo docker build -t prometheus ./Prometheus)
+   Предварительно скачиваем docker-образы (docker pull prometheus, docker pull prom/node-exporter, docker pull grafana/grafana)
 
-   Запуск контейнера Prometheus (sudo docker run -d --name prometheus -p 9090:9090 prometheus)
+   Создание образа Prometheus с конфигом (docker build -t prometheus ./Prometheus)
 
-   Запуск контейнера Node_exporter (sudo docker run -d --name node_exporter -p 9100:9100 prom/node-exporter)
+   Запуск контейнера Prometheus (docker run -d --name prometheus -p 9090:9090 prometheus)
 
-   Запуск контейнера Grafana (sudo docker run -d --name grafana -p 3000:3000 grafana/grafana)
+   Запуск контейнера Node_exporter (docker run -d --name node_exporter -p 9100:9100 prom/node-exporter)
+
+   Запуск контейнера Grafana (docker run -d --name grafana -p 3000:3000 grafana/grafana)
 
    Настройки Grafana:
 
@@ -65,14 +73,8 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-10. ELK
+11. ELK
 
-   sudo docker pull elasticsearch:8.15.0
-
-   sudo docker pull logstash:8.15.0
-
-   sudo docker pull kibana:8.15.0
-
-   sudo docker pull elastic/filebeat:8.15.0
-
+   Предварительно скачиваем docker-образы (docker pull elasticsearch:8.15.0, docker pull logstash:8.15.0, docker pull kibana:8.15.0, docker pull elastic/filebeat:8.15.0)
+   
    
