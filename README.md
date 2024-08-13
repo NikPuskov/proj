@@ -57,7 +57,7 @@
 
    Запуск скрипта репликации (bash ./MySQL/repl.sh)
 
-   Запуск скрипта backup посуточно (cp ./MySQL/backup.sh /etc/cron.daily/backup.sh)
+   Запуск скрипта backup slave (bash ./MySQL/backup.sh)
 
 6. Prometheus + node_exporter + Grafana
 
