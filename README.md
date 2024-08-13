@@ -33,7 +33,9 @@
 
 7. MySQL
 
-   Предварительно устанавливаем MySQL сервер (apt install mysql-server-8.0)
+   Предварительно устанавливаем MySQL клиент на хостовую машину (apt install mysql-client-core-8.0)
+
+   Копируем файл .my.cnf в корень (cp /root/proj/.my.cnf /root/.my.cnf)
 
    Создание образа mysql slave (sudo docker build -t slave ./MySQL)
 
@@ -45,7 +47,7 @@
 
    Запуск скрипта backup посуточно (sudo cp ./MySQL/backup.sh /etc/cron.daily/backup.sh)
 
-8. Prometheus + node_exporter + Grafana
+9. Prometheus + node_exporter + Grafana
 
    Создание образа Prometheus (sudo docker build -t prometheus ./Prometheus)
 
@@ -63,7 +65,7 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-9. ELK
+10. ELK
 
    sudo docker pull elasticsearch:8.15.0
 
