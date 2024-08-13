@@ -24,12 +24,6 @@ tput sgr0
 docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0
 echo "\033[32m Docker-контейнер MySQL-Master запущен успешно"
 tput sgr0
-sh /root/proj/MySQL/repl.sh
-echo "\033[32m Скрипт репликации выполнен успешно"
-tput sgr0
-sh /root/proj/MySQL/backup.sh
-echo "\033[32m Скрипт бэкапа БД с MySQL-Slave выполнен успешно"
-tput sgr0
 docker build -t prometheus ./Prometheus
 echo "\033[32m Создание Docker-образа Prometheus успешно завершено"
 tput sgr0
@@ -41,4 +35,13 @@ echo "\033[32m Docker-контейнер Node_exporter запущен успеш
 tput sgr0
 docker run -d --name grafana -p 3000:3000 grafana/grafana
 echo "\033[32m Docker-контейнер Grafana запущен успешно"
+tput sgr0
+echo "\033[33m Ожидание выполнения скриптов для MySQL"
+tput sgr0
+sleep 40
+bash /root/proj/MySQL/repl.sh
+echo "\033[32m Скрипт репликации выполнен успешно"
+tput sgr0
+bash /root/proj/MySQL/backup.sh
+echo "\033[32m Скрипт бэкапа БД с MySQL-Slave выполнен успешно"
 tput sgr0
