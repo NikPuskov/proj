@@ -35,7 +35,7 @@
 
 4. Apache
 
-   Предварительно скачиваем docker-образ (docker pull httpd:2.4.52)
+   Предварительно скачиваем docker-образ (docker pull httpd:2.4.62)
 
    Создание образа с конфигами (docker build -t httpd1 ./Httpd)
 
