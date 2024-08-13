@@ -17,9 +17,9 @@
 
    Установить git (apt install git)
 
-4. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
+2. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
 
-5. Nginx
+3. Nginx
 
    Предварительно скачиваем docker-образ (docker pull nginx:1.26)
 
@@ -27,7 +27,7 @@
 
    Запуск контейнера (docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
 
-6. Apache
+4. Apache
 
    Предварительно скачиваем docker-образ (docker pull httpd:2.4.52)
 
@@ -35,7 +35,7 @@
 
    Запуск контейнера (docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
 
-7. MySQL
+5. MySQL
 
    Предварительно устанавливаем MySQL клиент на хостовую машину (apt install mysql-client-core-8.0)
 
@@ -53,7 +53,7 @@
 
    Запуск скрипта backup посуточно (cp ./MySQL/backup.sh /etc/cron.daily/backup.sh)
 
-9. Prometheus + node_exporter + Grafana
+6. Prometheus + node_exporter + Grafana
 
    Предварительно скачиваем docker-образы (docker pull prometheus, docker pull prom/node-exporter, docker pull grafana/grafana)
 
@@ -73,7 +73,7 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-10.ELK
+7. ELK
 
    Предварительно скачиваем docker-образы (docker pull elasticsearch:8.15.0, docker pull logstash:8.15.0, docker pull kibana:8.15.0, docker pull elastic/filebeat:8.15.0)
    
