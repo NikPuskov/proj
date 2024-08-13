@@ -73,7 +73,7 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-11. ELK
+10.ELK
 
    Предварительно скачиваем docker-образы (docker pull elasticsearch:8.15.0, docker pull logstash:8.15.0, docker pull kibana:8.15.0, docker pull elastic/filebeat:8.15.0)
    
