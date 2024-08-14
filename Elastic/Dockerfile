@@ -1,3 +1,3 @@
 FROM elasticsearch:8.15.0
-COPY ./elasticsearch.yml /config/elasticsearch.yml
-COPY ./jvm.options /config/jvm.options
+COPY ./elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+COPY ./jvm.options /usr/share/elasticsearch/config/jvm.options
