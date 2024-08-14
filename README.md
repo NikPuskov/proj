@@ -21,6 +21,8 @@
 
    Установить git (apt install git)
 
+   Устанавливаем MySQL клиент (apt install mysql-client-core-8.0)
+
 3. Клонировать репозиторий из GitHub (git clone https://github.com/NikPuskov/proj.git) и перейти в папку proj (cd proj)
 
    Запустить скрипт proj.sh (sh ./proj.sh)
@@ -45,9 +47,7 @@
 
 6. MySQL
 
-   Предварительно устанавливаем MySQL клиент на хостовую машину (apt install mysql-client-core-8.0)
-
-   Так же предварительно скачиваем docker-образ (docker pull mysql:8.0)
+   Предварительно скачиваем docker-образ (docker pull mysql:8.0)
 
    Копируем файл .my.cnf в корень (cp /root/proj/.my.cnf /root/.my.cnf)
 
@@ -63,7 +63,7 @@
 
 7. Prometheus + node_exporter + Grafana
 
-   Предварительно скачиваем docker-образы (docker pull prometheus, docker pull prom/node-exporter, docker pull grafana/grafana)
+   Предварительно скачиваем docker-образы (docker pull prom/prometheus, docker pull prom/node-exporter, docker pull grafana/grafana)
 
    Создание образа Prometheus с конфигом (docker build -t prometheus ./Prometheus)
 
