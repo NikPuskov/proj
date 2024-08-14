@@ -23,7 +23,7 @@
 
    Установить git `apt install git`
 
-   Устанавливаем MySQL клиент `apt install mysql-client-core-8.0`
+   Установить MySQL клиент `apt install mysql-client-core-8.0`
 
 3. Клонировать репозиторий из GitHub `git clone https://github.com/NikPuskov/proj.git` и перейти в папку proj `cd proj`
 
