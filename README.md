@@ -33,47 +33,47 @@
 
 4. Nginx
 
-   Предварительно скачиваем docker-образ (docker pull nginx:1.26)
+   Предварительно скачиваем docker-образ `docker pull nginx:1.26`
 
-   Создание образа с конфигом (docker build -t nginx1 ./Nginx)
+   Создание образа с конфигом `docker build -t nginx1 ./Nginx`
 
-   Запуск контейнера (docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1)
+   Запуск контейнера `docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1`
 
 5. Apache
 
-   Предварительно скачиваем docker-образ (docker pull httpd:2.4.62)
+   Предварительно скачиваем docker-образ `docker pull httpd:2.4.62`
 
-   Создание образа с конфигами (docker build -t httpd1 ./Httpd)
+   Создание образа с конфигами `docker build -t httpd1 ./Httpd`
 
-   Запуск контейнера (docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1)
+   Запуск контейнера `docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1`
 
 6. MySQL
 
-   Предварительно скачиваем docker-образ (docker pull mysql:8.0)
+   Предварительно скачиваем docker-образ `docker pull mysql:8.0`
 
-   Копируем файл .my.cnf в корень (cp /root/proj/.my.cnf /root/.my.cnf)
+   Копируем файл .my.cnf в корень `cp /root/proj/.my.cnf /root/.my.cnf`
 
-   Создание образа mysql slave с конфигом (docker build -t slave ./MySQL)
+   Создание образа mysql slave с конфигом `docker build -t slave ./MySQL`
 
-   Запуск контейнера mysql slave (docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave)
+   Запуск контейнера mysql slave `docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave`
 
-   Запуск контейнера mysql master (docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0)
+   Запуск контейнера mysql master `docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0`
 
-   Запуск скрипта репликации (bash ./MySQL/repl.sh)
+   Запуск скрипта репликации `bash ./MySQL/repl.sh`
 
-   Запуск скрипта backup slave (bash ./MySQL/backup.sh)
+   Запуск скрипта backup slave `bash ./MySQL/backup.sh`
 
 7. Prometheus + node_exporter + Grafana
 
-   Предварительно скачиваем docker-образы (docker pull prom/prometheus, docker pull prom/node-exporter, docker pull grafana/grafana)
+   Предварительно скачиваем docker-образы `docker pull prom/prometheus` `docker pull prom/node-exporter` `docker pull grafana/grafana`
 
-   Создание образа Prometheus с конфигом (docker build -t prometheus ./Prometheus)
+   Создание образа Prometheus с конфигом `docker build -t prometheus ./Prometheus`
 
-   Запуск контейнера Prometheus (docker run -d --name prometheus -p 9090:9090 prometheus)
+   Запуск контейнера Prometheus `docker run -d --name prometheus -p 9090:9090 prometheus`
 
-   Запуск контейнера Node_exporter (docker run -d --name node_exporter -p 9100:9100 prom/node-exporter)
+   Запуск контейнера Node_exporter `docker run -d --name node_exporter -p 9100:9100 prom/node-exporter`
 
-   Запуск контейнера Grafana (docker run -d --name grafana -p 3000:3000 grafana/grafana)
+   Запуск контейнера Grafana `docker run -d --name grafana -p 3000:3000 grafana/grafana`
 
    Настройки Grafana:
 
@@ -85,6 +85,6 @@
 
 8. ELK
 
-   Предварительно скачиваем docker-образы (docker pull elasticsearch:8.15.0, docker pull logstash:8.15.0, docker pull kibana:8.15.0, docker pull elastic/filebeat:8.15.0)
+   Предварительно скачиваем docker-образы `docker pull elasticsearch:8.15.0` `docker pull logstash:8.15.0` `docker pull kibana:8.15.0` `docker pull elastic/filebeat:8.15.0`
    
    
