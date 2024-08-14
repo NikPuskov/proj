@@ -19,7 +19,7 @@
 
    Запустить сервис docker `systemctl enable --now docker`
 
-   Скачать необходимые образы Docker `nginx, httpd, mysql, prometheus, node_exporter, grafana, elasticsearch, logstash, kibana, filebeat`
+   Скачать необходимые образы Docker `nginx` `httpd` `mysql` `prometheus` `node_exporter` `grafana` `elasticsearch` `logstash` `kibana` `filebeat`
 
    Установить git `apt install git`
 
