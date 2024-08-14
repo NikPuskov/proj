@@ -89,16 +89,16 @@
 
    Создание образа Elasticsearch с конфигом `docker build -t elastic1 ./Elastic`
    
-   Запуск контейнера Elasticsearch `docker run -d --name elastic elastic1`
+   Запуск контейнера Elasticsearch `docker run -d --name elastic -p 9200:9200 -p 9300:9300 elastic1`
 
    Создание образа Kibana с конфигом `docker build -t kibana1 ./Kibana`
 
-   Запуск контейнера Kibana `docker run -d --name kibana kibana1`
+   Запуск контейнера Kibana `docker run -d --name kibana -p 5601:5601 kibana1`
 
    Создание образа Logstash с конфигом `docker build -t logstash1 ./Logstash`
 
-   Запуск контейнера Logstash `docker run -d --name logstash logstash1`
+   Запуск контейнера Logstash `docker run -d --name logstash -p 5044:5044 -p 9600:9600 logstash1`
 
    Создание образа Filebeat с конфигом `docker build -t filebeat1 ./Filebeat`
 
-   Запуск контейнера Filebeat `docker run -d --name filebeat filebeat1`
+   Запуск контейнера Filebeat `docker run -d --name filebeat -p 5400:5400 filebeat1`
