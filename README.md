@@ -1,11 +1,3 @@
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
 # proj
 Проектная работа
 
@@ -21,7 +13,7 @@
 
    Установить Ubuntu 22.04
 
-   Работу выполнять под root + sudo -i
+   Работу выполнять под root **sudo -i**
 
    Установить docker **apt install docker.io**
 
