@@ -86,5 +86,19 @@
 8. ELK
 
    Предварительно скачиваем docker-образы `docker pull elasticsearch:8.15.0` `docker pull logstash:8.15.0` `docker pull kibana:8.15.0` `docker pull elastic/filebeat:8.15.0`
+
+   Создание образа Elasticsearch с конфигом `docker build -t elastic1 ./Elastic`
    
-   
+   Запуск контейнера Elasticsearch `docker run -d --name elastic elastic1`
+
+   Создание образа Kibana с конфигом `docker build -t kibana1 ./Kibana`
+
+   Запуск контейнера Kibana `docker run -d --name kibana kibana1`
+
+   Создание образа Logstash с конфигом `docker build -t logstash1 ./Logstash`
+
+   Запуск контейнера Logstash `docker run -d --name logstash logstash1`
+
+   Создание образа Filebeat с конфигом `docker build -t filebeat1 ./Filebeat`
+
+   Запуск контейнера Filebeat `docker run -d --name filebeat filebeat1`
