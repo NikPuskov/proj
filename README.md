@@ -13,9 +13,9 @@
 
    Установить Ubuntu 22.04
 
-   Работу выполнять под root $${\color{green}sudo -i}$$ sudo -i
+   Работу выполнять под root $${\color{green}sudo -i}$$
 
-   Установить docker **apt install docker.io**
+   Установить docker $${\color{green}apt install docker.io}$$
 
    Запустить сервис docker **systemctl enable --now docker**
 
