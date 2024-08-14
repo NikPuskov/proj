@@ -30,11 +30,11 @@
 #
 # Path to directory where to store the data (separate multiple locations by comma):
 #
-path.data: /lib/
+path.data: /usr/share/elasticsearch/lib/
 #
 # Path to log files:
 #
-path.logs: /logs/
+path.logs: /usr/share/elasticsearch/logs/
 #
 # ----------------------------------- Memory -----------------------------------
 #
