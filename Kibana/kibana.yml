@@ -133,7 +133,7 @@ server.host: "0.0.0.0"
 #path.data: data
 
 # Specifies the path where Kibana creates the process ID file.
-pid.file: /run/kibana/kibana.pid
+#pid.file: /run/kibana/kibana.pid
 
 # Set the interval in milliseconds to sample system and process performance
 # metrics. Minimum is 100ms. Defaults to 5000ms.
