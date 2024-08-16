@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "\033[31m Аварийное восстановление микросервисной архитектуры"
+tput sgr0
+sleep 3
+echo "\033[36m Web-сервер с балансировкой нагрузки"
+tput sgr0
 docker build -t nginx1 ./Nginx
 echo "\033[32m Создание Docker-образа Nginx выполнено успешно"
 tput sgr0
@@ -11,6 +16,9 @@ echo "\033[32m Создание Docker-образа Httpd выполнено у�
 tput sgr0
 docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1
 echo "\033[32m Docker-контейнер Httpd запущен успешно"
+tput sgr0
+sleep 3
+echo "\033[36m MySQL сервер с репликацией"
 tput sgr0
 cp /root/proj/.my.cnf /root/.my.cnf
 echo "\033[32m Копирование конфига для MySQL успешно завершено"
@@ -24,6 +32,9 @@ tput sgr0
 docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0
 echo "\033[32m Docker-контейнер MySQL-Master запущен успешно"
 tput sgr0
+sleep 3
+echo "\033[36m Мониторинг"
+tput sgr0
 docker build -t prometheus ./Prometheus
 echo "\033[32m Создание Docker-образа Prometheus успешно завершено"
 tput sgr0
@@ -36,12 +47,45 @@ tput sgr0
 docker run -d --name grafana -p 3000:3000 grafana/grafana
 echo "\033[32m Docker-контейнер Grafana запущен успешно"
 tput sgr0
+sleep 3
+echo "\033[36m ELK-стек"
+tput sgr0
+docker build -t elastic1 ./Elastic
+echo "\033[32m Создание Docker-образа Elasticsearch успешно завершено"
+tput sgr0
+docker run -d --name elastic --network=host -p 9200:9200 -p 9300:9300 elastic1
+echo "\033[32m Docker-контейнер Elasticsearch запущен успешно"
+tput sgr0
+docker build -t kibana1 ./Kibana
+echo "\033[32m Создание Docker-образа Kibana успешно завершено"
+tput sgr0
+docker run -d --name kibana --network=host -p 5601:5601 kibana1
+echo "\033[32m Docker-контейнер Kibana запущен успешно"
+tput sgr0
+docker build -t logstash1 ./Logstash
+echo "\033[32m Создание Docker-образа Logstash успешно завершено"
+tput sgr0
+docker run -d --name logstash --network=host -p 5400:5400 logstash1
+echo "\033[32m Docker-контейнер Logstash запущен успешно"
+tput sgr0
+docker build -t filebeat1 ./Filebeat
+echo "\033[32m Создание Docker-образа Filebeat успешно завершено"
+tput sgr0
+docker run -d --name filebeat --network=host -v /var/log/nginx:/var/log/nginx filebeat1
+echo "\033[32m Docker-контейнер Filebeat запущен успешно"
+tput sgr0
+sleep 3
+echo "\033[36m Скрипты Репликации и Бэкапа"
+tput sgr0
 echo "\033[33m Ожидание выполнения скриптов для MySQL"
 tput sgr0
 sleep 40
 bash /root/proj/MySQL/repl.sh
-echo "\033[32m Скрипт репликации выполнен успешно"
+echo "\033[32m Скрипт репликации MySQL выполнен успешно"
 tput sgr0
 bash /root/proj/MySQL/backup.sh
 echo "\033[32m Скрипт бэкапа БД с MySQL-Slave выполнен успешно"
+tput sgr0
+sleep 3
+echo "\033[32m Аварийное восстановление микросервисной архитектуры успешно завершено"
 tput sgr0
