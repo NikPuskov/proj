@@ -89,7 +89,7 @@
 
    Создание образа Elasticsearch с конфигом `docker build -t elastic1 ./Elastic`
    
-   Запуск контейнера Elasticsearch `docker run -d --name elastic -p 9200:9200 elastic1`
+   Запуск контейнера Elasticsearch `docker run -d --name elastic -p 9200:9200 -p 9300:9300 elastic1`
 
    Если Elastic не запускается, выполнить `sysctl -w vm.max_map_count=524288`
 
