@@ -103,4 +103,4 @@
 
    Создание образа Filebeat с конфигом `docker build -t filebeat1 ./Filebeat`
 
-   Запуск контейнера Filebeat `docker run -d --name filebeat -p 5400:5400 filebeat1`
+   Запуск контейнера Filebeat `docker run -d --name filebeat -v /var/log/nginx:/var/log/nginx -p 5400:5400 filebeat1`
