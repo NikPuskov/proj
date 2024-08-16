@@ -99,8 +99,8 @@
 
    Создание образа Logstash с конфигом `docker build -t logstash1 ./Logstash`
 
-   Запуск контейнера Logstash `docker run -d --name logstash -p 5044:5044 -p 9600:9600 logstash1`
+   Запуск контейнера Logstash `docker run -d --name logstash --network=host -p 5400:5400 logstash1`
 
    Создание образа Filebeat с конфигом `docker build -t filebeat1 ./Filebeat`
 
-   Запуск контейнера Filebeat `docker run -d --name filebeat -v /var/log/nginx:/var/log/nginx -p 5400:5400 filebeat1`
+   Запуск контейнера Filebeat `docker run -d --name filebeat --network=host -v /var/log/nginx:/var/log/nginx filebeat1`
