@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 MYSQL='mysql -h127.0.0.1 -P3308 --skip-column-names';
 
