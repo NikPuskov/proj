@@ -95,8 +95,6 @@
    
    Запуск контейнера Elasticsearch `docker run -d --name elastic --network=host -p 9200:9200 -p 9300:9300 elastic1`
 
-   Если Elastic не запускается, выполнить `sysctl -w vm.max_map_count=524288`
-
    Создание образа Kibana с конфигом `docker build -t kibana1 ./Kibana`
 
    Запуск контейнера Kibana `docker run -d --name kibana --network=host -p 5601:5601 kibana1`
