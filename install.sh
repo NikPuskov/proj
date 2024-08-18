@@ -12,5 +12,4 @@ docker pull elasticsearch:8.15.0
 docker pull logstash:8.15.0
 docker pull kibana:8.15.0
 docker pull elastic/filebeat:8.15.0
-apt install git
 apt install mysql-client-core-8.0
