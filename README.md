@@ -117,4 +117,6 @@
 
    Запуск контейнера Filebeat `docker run -d --name filebeat --network=host -v /var/log/nginx:/var/log/nginx filebeat1`
 
-   Зайти на ip_address:5601 -> 
+   Зайти на ip_address:5601 -> management -> stack management -> index management
+
+   analytics -> discover -> create dataview -> name "Nginx" -> index pattern "weblog*" -> timestamp -> save data viev to kibana
