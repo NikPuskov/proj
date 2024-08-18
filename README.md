@@ -5,7 +5,7 @@
 
 Проект разбит на микросервисы в контейнерах docker, каждая папка это отдельный образ контейнера с файлами конфигураций
 
-Рекомендованная конфигурация виртуальной машины для выполнения работы - процессор 4 ядра, 8 гб ОЗУ, не менее 20 гб жесткий диск
+Рекомендованная конфигурация виртуальной машины для выполнения работы - процессор 4 ядра, 8 гб ОЗУ, не менее 30 гб SSD-диск
 
 Для запуска необходимо выполнить несколько пунктов
 
@@ -15,23 +15,23 @@
 
    Работу выполнять под root `sudo -i`
 
-   Установить docker `apt install docker.io`
+   Клонировать репозиторий из GitHub `git clone https://github.com/NikPuskov/proj.git` и перейти в папку proj `cd proj`
+
+   Запустить скрипт install.sh `sh ./install.sh`
+
+   Запустить скрипт proj.sh `sh ./proj.sh`
+
+   Либо выполнять всё попунктно далее сo 2 пункта
+
+2. Установить docker `apt install docker.io`
 
    Запустить сервис docker `systemctl enable --now docker`
-
-   Скачать необходимые образы Docker `nginx` `httpd` `mysql` `prometheus` `node_exporter` `grafana` `elasticsearch` `logstash` `kibana` `filebeat`
 
    Установить git `apt install git`
 
    Установить MySQL клиент `apt install mysql-client-core-8.0`
 
-3. Клонировать репозиторий из GitHub `git clone https://github.com/NikPuskov/proj.git` и перейти в папку proj `cd proj`
-
-   Запустить скрипт proj.sh `sh ./proj.sh`
-
-   Либо выполнять всё попунктно далее с 3 пункта 
-
-4. Nginx
+3. Nginx
 
    Предварительно скачиваем docker-образ `docker pull nginx:1.26`
 
@@ -39,7 +39,7 @@
 
    Запуск контейнера `docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1`
 
-5. Apache
+4. Apache
 
    Предварительно скачиваем docker-образ `docker pull httpd:2.4.62`
 
@@ -47,7 +47,7 @@
 
    Запуск контейнера `docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1`
 
-6. MySQL
+5. MySQL
 
    Предварительно скачиваем docker-образ `docker pull mysql:8.0`
 
@@ -63,7 +63,7 @@
 
    Запуск скрипта backup slave `bash ./MySQL/backup.sh`
 
-7. Prometheus + node_exporter + Grafana
+6. Prometheus + node_exporter + Grafana
 
    Предварительно скачиваем docker-образы `docker pull prom/prometheus` `docker pull prom/node-exporter` `docker pull grafana/grafana`
 
@@ -83,7 +83,7 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-8. ELK
+7. ELK
 
    Предварительно скачиваем docker-образы `docker pull elasticsearch:8.15.0` `docker pull logstash:8.15.0` `docker pull kibana:8.15.0` `docker pull elastic/filebeat:8.15.0`
 
