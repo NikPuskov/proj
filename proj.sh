@@ -79,7 +79,7 @@ echo "\033[36m Скрипты Репликации и Бэкапа"
 tput sgr0
 echo "\033[33m Ожидание выполнения скриптов для MySQL"
 tput sgr0
-sleep 40
+sleep 60
 bash /root/proj/MySQL/repl.sh
 echo "\033[32m Скрипт репликации MySQL выполнен успешно"
 tput sgr0
