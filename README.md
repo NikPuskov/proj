@@ -27,7 +27,7 @@
 
    Либо выполнять всё попунктно далее сo 2 пункта
 
-3. Установить docker `apt install docker.io`
+2. Установить docker `apt install docker.io`
 
    Запустить сервис docker `systemctl enable --now docker`
 
@@ -37,7 +37,7 @@
 
    Клонировать репозиторий из GitHub `git clone https://github.com/NikPuskov/proj.git` и перейти в папку proj `cd proj`
 
-5. Nginx
+3. Nginx
 
    Предварительно скачиваем docker-образ `docker pull nginx:1.26`
 
@@ -45,7 +45,7 @@
 
    Запуск контейнера `docker run -d --name nginx --network=host -p 80:80 -v /var/log/nginx:/var/log/nginx nginx1`
 
-6. Apache
+   Apache
 
    Предварительно скачиваем docker-образ `docker pull httpd:2.4.62`
 
@@ -53,7 +53,9 @@
 
    Запуск контейнера `docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1`
 
-7. MySQL
+   Проверить балансировщик `curl localhost | grep Welcome`
+
+5. MySQL
 
    Предварительно скачиваем docker-образ `docker pull mysql:8.0`
 
@@ -69,7 +71,13 @@
 
    Запуск скрипта backup slave `bash ./MySQL/backup.sh`
 
-8. Prometheus + node_exporter + Grafana
+   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> 'show replica status\G;` -> `exit`
+
+   Зайти на Master `mysql -р127.0.0.1 -P3305` -> `showdatabases;` -> `create database My_db;`
+
+   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> 'show replica status\G;` -> `exit`
+   
+7. Prometheus + node_exporter + Grafana
 
    Предварительно скачиваем docker-образы `docker pull prom/prometheus` `docker pull prom/node-exporter` `docker pull grafana/grafana`
 
@@ -89,7 +97,7 @@
 
       c) dashboards -> import dashboard -> 1860 -> load
 
-9. ELK
+8. ELK
 
    Предварительно скачиваем docker-образы `docker pull elasticsearch:8.15.0` `docker pull logstash:8.15.0` `docker pull kibana:8.15.0` `docker pull elastic/filebeat:8.15.0`
 
@@ -108,3 +116,5 @@
    Создание образа Filebeat с конфигом `docker build -t filebeat1 ./Filebeat`
 
    Запуск контейнера Filebeat `docker run -d --name filebeat --network=host -v /var/log/nginx:/var/log/nginx filebeat1`
+
+   Зайти на ip_address:5601 -> 
