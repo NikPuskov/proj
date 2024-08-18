@@ -75,3 +75,5 @@ docker run -d --name filebeat --network=host -v /var/log/nginx:/var/log/nginx fi
 echo "\033[32m Docker-контейнер Filebeat запущен успешно"
 tput sgr0
 sleep 3
+echo "\033[32m Аварийное восстановление микросервисной архитектуры успешно завершено"
+tput sgr0
