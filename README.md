@@ -23,7 +23,7 @@
 
    Запустить скрипт proj.sh `sh ./proj.sh`
 
-   Если конфигурация виртуальной машины ниже рекомендованной, запустить proj1.sh и через 3 минуты mysql.sh 
+   Если конфигурация виртуальной машины ниже рекомендованной, запустить скрипт proj1.sh `sh ./proj1.sh` и через 3 минуты скрипт mysql.sh `sh ./mysql.sh` 
 
    Либо выполнять всё попунктно далее сo 2 пункта
 
@@ -75,7 +75,7 @@
 
    Зайти на Master `mysql -р127.0.0.1 -P3305` -> `showdatabases;` -> `create database My_db;`
 
-   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> 'show replica status\G;` -> `exit`
+   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> `show replica status\G;` -> `exit`
    
 7. Prometheus + node_exporter + Grafana
 
