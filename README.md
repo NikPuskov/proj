@@ -71,7 +71,7 @@
 
    Запуск скрипта backup slave `bash ./MySQL/backup.sh`
 
-   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> 'show replica status\G;` -> `exit`
+   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> `show replica status\G;` -> `exit`
 
    Зайти на Master `mysql -р127.0.0.1 -P3305` -> `showdatabases;` -> `create database My_db;`
 
