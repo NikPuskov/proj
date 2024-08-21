@@ -5,7 +5,7 @@
 
 Проект разбит на микросервисы в контейнерах docker, каждая папка это отдельный образ контейнера с файлами конфигураций
 
-Рекомендованная конфигурация виртуальной машины для выполнения работы - процессор 4 ядра, 8 гб ОЗУ, не менее 30 гб SSD-диск
+Рекомендованная конфигурация виртуальной машины для выполнения работы - процессор 4 ядра, 8 гб ОЗУ, не менее 20 гб SSD-диск
 
 Для запуска необходимо выполнить несколько пунктов
 
@@ -15,7 +15,9 @@
 
    Работу выполнять под root `sudo -i`
 
-   Установить git `apt install git`
+   Поставить обновления `apt update` `apt upgrade`
+
+   Установить git, если он не установлен `apt install git`
 
    Клонировать репозиторий из GitHub `git clone https://github.com/NikPuskov/proj.git` и перейти в папку proj `cd proj`
 
@@ -27,17 +29,17 @@
 
    Либо выполнять всё попунктно далее сo 2 пункта
 
-2. Установить docker `apt install docker.io`
+3. Установить docker `apt install docker.io`
 
    Запустить сервис docker `systemctl enable --now docker`
 
-   Установить git `apt install git`
+   Установить git, если он не установлен `apt install git`
 
    Установить MySQL клиент `apt install mysql-client-core-8.0`
 
    Клонировать репозиторий из GitHub `git clone https://github.com/NikPuskov/proj.git` и перейти в папку proj `cd proj`
 
-3. Nginx
+4. Nginx
 
    Предварительно скачиваем docker-образ `docker pull nginx:1.26`
 
