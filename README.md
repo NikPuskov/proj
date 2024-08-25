@@ -55,7 +55,7 @@
 
    Запуск контейнера `docker run -d --name httpd -p 8080:8080 -p 8081:8081 -p 8082:8082 httpd1`
 
-   Проверить балансировщик `curl localhost | grep Welcome`
+   Проверить балансировщик `curl localhost | grep Welcome` либо в браузере ip_address `ctrl+f5`
 
 5. MySQL
 
@@ -73,11 +73,11 @@
 
    Запуск скрипта backup slave `bash ./MySQL/backup.sh`
 
-   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> `show replica status\G;` -> `exit`
+   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `show databases;` -> `show replica status\G;` -> `exit`
 
-   Зайти на Master `mysql -р127.0.0.1 -P3305` -> `showdatabases;` -> `create database My_db;`
+   Зайти на Master `mysql -р127.0.0.1 -P3305` -> `show databases;` -> `create database My_db;`
 
-   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `showdatabases;` -> `show replica status\G;` -> `exit`
+   Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `show databases;` -> `show replica status\G;` -> `exit`
    
 7. Prometheus + node_exporter + Grafana
 
