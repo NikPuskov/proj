@@ -69,6 +69,8 @@
 
    Запуск скрипта репликации `bash ./MySQL/repl.sh`
 
+   Настраиваем Cron для запуска скрипта бэкапа баз данных ежедневно в 5 утра `crontab -e` -> `0 5 * * * /root/proj/MySQL/backup.sh` -> `ctrl+o` -> `enter` -> `ctrl+x`
+
    Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `show databases;` -> `show replica status\G;` -> `exit`
 
    Зайти на Master `mysql -р127.0.0.1 -P3305` -> `show databases;` -> `create database My_db;`
