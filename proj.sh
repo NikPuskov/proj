@@ -29,7 +29,7 @@ tput sgr0
 docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave
 echo "\033[32m Docker-контейнер MySQL-Slave запущен успешно"
 tput sgr0
-docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0
+docker run -v /var/lib/mysql:/var/lib/mysql --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0
 echo "\033[32m Docker-контейнер MySQL-Master запущен успешно"
 tput sgr0
 sleep 3
