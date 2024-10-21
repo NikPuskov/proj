@@ -23,9 +23,7 @@
 
    Запустить скрипт install.sh `sh ./install.sh`
 
-   Запустить скрипт proj.sh `sh ./proj.sh`
-
-   Если конфигурация виртуальной машины ниже рекомендованной, запустить скрипт proj1.sh `sh ./proj1.sh` и через 3 минуты скрипт mysql.sh `sh ./mysql.sh` 
+   Запустить скрипт proj.sh `sh ./proj.sh` 
 
    Либо выполнять всё попунктно далее сo 2 пункта
 
@@ -67,11 +65,9 @@
 
    Запуск контейнера mysql slave `docker run --name mysql-slave -p 3308:3306 -e MYSQL_ROOT_PASSWORD=superuser -d slave`
 
-   Запуск контейнера mysql master `docker run --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0`
+   Запуск контейнера mysql master `docker run -v /var/lib/mysql:/var/lib/mysql --name mysql-master -p 3305:3306 -e MYSQL_ROOT_PASSWORD=superuser -d mysql:8.0`
 
    Запуск скрипта репликации `bash ./MySQL/repl.sh`
-
-   Запуск скрипта backup slave `bash ./MySQL/backup.sh`
 
    Зайти на Slave `mysql -h127.0.0.1 -P3308` -> `show databases;` -> `show replica status\G;` -> `exit`
 
