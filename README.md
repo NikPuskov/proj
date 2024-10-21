@@ -23,7 +23,9 @@
 
    Запустить скрипт install.sh `sh ./install.sh`
 
-   Запустить скрипт proj.sh `sh ./proj.sh` 
+   Запустить скрипт proj.sh `sh ./proj.sh`
+
+   Настраиваем Cron для запуска скрипта бэкапа баз данных ежедневно в 5 утра `crontab -e` -> `0 5 * * * /root/proj/MySQL/backup.sh` -> `ctrl+o` -> `enter` -> `ctrl+x`
 
    Либо выполнять всё попунктно далее сo 2 пункта
 
